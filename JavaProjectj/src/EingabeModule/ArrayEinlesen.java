@@ -27,7 +27,9 @@ public class ArrayEinlesen {
 	     }
 	     catch (ClassNotFoundException e) {
 	         e.printStackTrace();
+	         
 	         return null;
+	         
 	     }
 	  }
 	 public static String[][][] readWohnungen(){
