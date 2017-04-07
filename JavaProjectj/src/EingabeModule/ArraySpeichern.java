@@ -26,4 +26,15 @@ public class ArraySpeichern {
 		  
 	  }
   }
+ 
+ public static void saveKatalog(String[][] katalogArray){
+	  try{
+		  ObjectOutputStream os = new ObjectOutputStream( new FileOutputStream("katalog.txt"));
+         os.writeObject(katalogArray);
+         os.close();
+	  }
+	  catch(Exception e){
+		  
+	  }
+ }
 }
