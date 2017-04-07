@@ -1,4 +1,4 @@
-package EingabeModule;
+package AusgabeModule;
 
 import java.io.FileOutputStream;
 
