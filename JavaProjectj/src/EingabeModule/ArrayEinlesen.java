@@ -1,5 +1,6 @@
 package EingabeModule;
 
+import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -9,10 +10,12 @@ import java.io.ObjectInputStream;
 public class ArrayEinlesen {
 	public static String[][] readBenutzer(){
 		 ObjectInputStream is;
-		 String [][] benutzerarray;
+		 String [][] benutzerarray = null;
 	     try {
 	         is = new ObjectInputStream(new FileInputStream("benutzer.txt"));
+	         if(is.readObject() != null){
 	         benutzerarray = (String[][]) is.readObject();
+	         }
 	         is.close();
 	         return benutzerarray;
 
@@ -22,15 +25,14 @@ public class ArrayEinlesen {
 	         return null;
 	     }
 	     catch (IOException e1) {
-	         e1.printStackTrace();
+	         //e1.printStackTrace();
 	         return null;
 	     }
 	     catch (ClassNotFoundException e) {
 	         e.printStackTrace();
-	         
 	         return null;
-	         
 	     }
+	    
 	  }
 	 public static String[][][] readWohnungen(){
 		 ObjectInputStream is;
