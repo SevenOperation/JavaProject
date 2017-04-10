@@ -24,11 +24,10 @@ public class Start {
 			fw.write("<tr>");
 			for (int x = 0; x < 4 ; x++){
 				if(x ==3){
-					fw.write("<td><img src="+katalog[i][x] +" width='190' height='108'></td>");
+					fw.write("<td><button><img src="+katalog[i][x] +" width='190' height='108'></button></td>");
 				}else{
 					fw.write("<td>"+katalog[i][x] +"</td>");
 				}
-			
 			}
 			fw.write("</tr>");
 		}
