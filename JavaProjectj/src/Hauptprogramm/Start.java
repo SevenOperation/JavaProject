@@ -12,7 +12,7 @@ public class Start {
 	 String[][] katalog = ArrayEinlesen.readKatalog();
 	 katalog = Wohnung.wohnungAnlegen(katalog, "180", "Kleines 1 Familien Haus", "23", "leckmichamarsch.png");
 	 String[][][] wohnungen = ArrayEinlesen.readWohnungen();
-	 //wohnungen = Buchen.buchen(wohnungen, 0, "27.8.2017", benutzer[0][0], benutzer[0][0]);
+	 wohnungen = Buchen.buchen(wohnungen, 0, "27.8.2017", benutzer[0][0], benutzer[0][0]);
 	 wohnungen = Buchen.buchungStornieren(wohnungen, 0, "27.8.2017", benutzer[0][0], benutzer[0][0]);
  }
 }
