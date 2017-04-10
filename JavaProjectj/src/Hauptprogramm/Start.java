@@ -8,10 +8,11 @@ import EingabeModule.Wohnung;
 public class Start {
  public static void main(String args[]){
 	 String[][] benutzer = ArrayEinlesen.readBenutzer();
-	 benutzer = Benutzer.benutzerRegistrieren(benutzer, "Seven", "Operation", "Schloßstrasse 7");
+	 benutzer = Benutzer.benutzerRegistrieren(benutzer, "Seven", "Operation", "Schloï¿½strasse 7");
 	 String[][] katalog = ArrayEinlesen.readKatalog();
 	 katalog = Wohnung.wohnungAnlegen(katalog, "180", "Kleines 1 Familien Haus", "23", "leckmichamarsch.png");
-	 String[][][] wohnungen = null;
-	 Buchen.buchen(wohnungen, 0, "23.8.2017", benutzer[0][0], benutzer[0][1]);
+	 String[][][] wohnungen = ArrayEinlesen.readWohnungen();
+	 //wohnungen = Buchen.buchen(wohnungen, 0, "27.8.2017", benutzer[0][0], benutzer[0][0]);
+	 wohnungen = Buchen.buchungStornieren(wohnungen, 0, "27.8.2017", benutzer[0][0], benutzer[0][0]);
  }
 }

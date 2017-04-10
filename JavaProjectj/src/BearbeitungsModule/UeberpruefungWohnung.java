@@ -2,13 +2,13 @@ package BearbeitungsModule;
 
 import java.util.Scanner;
 
-public class UeberprüfungWohnung {
+public class UeberpruefungWohnung {
 
 
-static 	
-static boolean UeberprüfungWonhungen(String Zeit, String Wohn []){
+/*static 	
+static boolean Ueberprï¿½fungWonhungen(String Zeit, String Wohn []){
 for( int i W)
-}
+}*/
 	
 static void Kontrolle(){
 String wohn[] =new String [2];

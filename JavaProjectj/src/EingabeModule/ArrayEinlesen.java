@@ -3,8 +3,11 @@ package EingabeModule;
 import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.nio.file.FileSystemNotFoundException;
 
 
 public class ArrayEinlesen {
@@ -20,19 +23,9 @@ public class ArrayEinlesen {
 	         return benutzerarray;
 
 	     }
-	     catch (FileNotFoundException e1) {
-	         e1.printStackTrace();
-	         return null;
+	     catch (Exception e) {
+	        return null;
 	     }
-	     catch (IOException e1) {
-	         //e1.printStackTrace();
-	         return null;
-	     }
-	     catch (ClassNotFoundException e) {
-	         e.printStackTrace();
-	         return null;
-	     }
-	    
 	  }
 	 public static String[][][] readWohnungen(){
 		 ObjectInputStream is;
@@ -44,16 +37,7 @@ public class ArrayEinlesen {
 	         return wohungsarray;
 
 	     }
-	     catch (FileNotFoundException e1) {
-	         e1.printStackTrace();
-	         return null;
-	     }
-	     catch (IOException e1) {
-	         e1.printStackTrace();
-	         return null;
-	     }
-	     catch (ClassNotFoundException e) {
-	         e.printStackTrace();
+	     catch (Exception e) {
 	         return null;
 	     }
 	  } 
@@ -68,16 +52,7 @@ public class ArrayEinlesen {
 	         return katalogArray;
 
 	     }
-	     catch (FileNotFoundException e1) {
-	         e1.printStackTrace();
-	         return null;
-	     }
-	     catch (IOException e1) {
-	         e1.printStackTrace();
-	         return null;
-	     }
-	     catch (ClassNotFoundException e) {
-	         e.printStackTrace();
+	     catch (Exception e) {
 	         return null;
 	     }
 	  } 
