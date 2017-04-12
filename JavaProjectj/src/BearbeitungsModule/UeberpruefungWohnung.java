@@ -8,8 +8,11 @@ public class UeberpruefungWohnung {
 
 static void UeberpruefungWonhungen(){
 String wohn[] =new String [2];
-wohn[0]= "12.3.2017";
-wohn[1]= "12.5.2017";
+wohn[0]= "12.3.2017-12.3.2017";
+wohn[1]= "12.5.2017-15.5.2017";
+
+String aber=wohn[0];
+
 boolean a=false;
 a=Kontrolle(wohn);
 Ausgabe(a);
