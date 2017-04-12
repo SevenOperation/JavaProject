@@ -27,6 +27,7 @@ public class Start {
 					fw.write("<td><button><img src="+katalog[i][x] +" width='190' height='108'></button></td>");
 				}else{
 					fw.write("<td>"+katalog[i][x] +"</td>");
+			
 				}
 			}
 			fw.write("</tr>");
