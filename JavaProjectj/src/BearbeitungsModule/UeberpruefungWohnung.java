@@ -23,16 +23,17 @@ static void UeberpruefungWonhungen(){
 String wohn[] =new String [2];
 wohn[0]= "12.03.2017-14.03.2017";
 wohn[1]= "12.05.2017-15.05.2017";
-
-String aber=wohn[0];
-
 boolean a=false;
-//0a=Kontrolle(wohn);
+String aber;
+aber=EingabeDatum();
+
+a=Kontrolle(wohn,aber);
+Ausgabe(a);
 //Ausgabe(a);
-datumsValidierung();
+//datumsValidierung();
 }
 //Kleine Method zur Datumsvalidierung als hilfestellung #MirwarLangweillig
-public static void datumsValidierung(){
+/*public static void datumsValidierung(){
 	Scanner sc = new Scanner(System.in);
 	String d = sc.next();
 	SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yy");
@@ -49,39 +50,79 @@ public static void datumsValidierung(){
 	} catch (ParseException e) {
 		System.out.println("Datum ist nicht richtig");
 	}
+
+}*/	
+
+
+static boolean  DatumsUeberpruefen (String date,boolean a){   // Methode zur Datumsüberprüfung
+	 String split[]=date.split("-");
+	 SimpleDateFormat df =new SimpleDateFormat("dd.MM.yy");
+	 df.setLenient(false);	
+	try{
+	Date d3=df.parse(split[0]);
+	Date d4=df.parse(split[1]);
+	System.out.println("Datumseingabe Korrekt");
+	a=false;
+	}catch(ParseException ex){
+		System.out.println("Falsche  Datums Eingabe, bitte Wiederholen sie ihre Eingabe");
+	}	
+
+	 return a;
+	}
+static String EingabeDatum(){  // Methode zu Datums Eingabe und zur Überprüfung der richtigen Notation
+	Scanner sc = new Scanner (System.in);
+	boolean a=true;
+	String dt2;
+	do{
+	System.out.println("Datum eingeben in der Form 12.03.17-13.03.17");
 	
+	 dt2=sc.next();	
+	if(dt2.matches("(\\d{2}[.]{1}\\d{2}[.]{1}\\d{2}[-]{1}\\d{2}[.]{1}\\d{2}[.]{1}\\d{2})")){
+		
+	 a=DatumsUeberpruefen(dt2,a);
+	} else{
+		System.out.println("Eingabe entsprich nicht der Vorgabe");
+	}
+	 
+	
+	}while(a==true);
+	return dt2;
 }
 
-public static boolean Kontrolle(String wohn[]){
-Scanner sc = new Scanner(System.in);	
-String test;
-//String datum[]= wohn[0].split("-");
-//
-//test=datum[1];	
-// DateFormat df=new SimpleDateFormat("dd.MM.yyyy");
 
+public static boolean Kontrolle(String wohn[],String dt2){ // Methode zur Kontrolle ob Wohnungen zu dem angegeben Zeitung frei sind.
+	
+
+String datum[]= wohn[0].split("-");
+String datum2[]=wohn[1].split("-"); 
 boolean a=false;
-//
-System.out.println( "Eingabe Datum");
-test=sc.next();
+String test[]=dt2.split("-");
+SimpleDateFormat df =new SimpleDateFormat("dd.MM.yy");
+df.setLenient(false);
+try{
+Date d1=df.parse(datum[0]);
+Date d2=df.parse(datum[1]);
+Date d3=df.parse(test[0]);
+Date d4=df.parse(test[1]);
+Date d5=df.parse(datum2[0]);
+Date d6=df.parse(datum2[1]);
 
+if ((d3.compareTo(d1)>=0 )&& (d3.compareTo(d2)<=0)||(d4.compareTo(d1)>=0 )&& (d4.compareTo(d2)<=0)||(d3.compareTo(d5)>=0 )&& (d3.compareTo(d6)<=0)||(d4.compareTo(d5)>=0 )&& (d4.compareTo(d6)<=0)){
 
-
-	
-
-
-for(int i=0;i<wohn.length;i++){
-if(wohn[i].equals(test)){
-	 a=true;
+	a=true;
 }
 
+}catch(ParseException ex){
+	System.out.println("Falsches Datum");
+	
 }
 return a;
 }
 
+
 public static void Ausgabe(boolean b){
  if(b==false){
-	System.out.println("Wohnung sind Frei");
+	System.out.println("Wohnungen sind Frei");
 	}else
 		System.out.println("Wonhungen sind zu dem angegeben Zeitpunkt belegt");
 	
