@@ -19,17 +19,17 @@ public class UeberpruefungWohnung {
 
 
 
-static void UeberpruefungWonhungen(){
+static void ueberpruefungWonhungen(){
 String wohn[] =new String [2];
 wohn[0]= "12.03.2017-14.03.2017";
 wohn[1]= "12.05.2017-15.05.2017";
 boolean a=false;
 String aber;
-aber=EingabeDatum();
+aber=eingabeDatum();
 
-a=Kontrolle(wohn,aber);
-Ausgabe(a);
-//Ausgabe(a);
+a=kontrolle(wohn,aber);
+ausgabe(a);
+
 //datumsValidierung();
 }
 //Kleine Method zur Datumsvalidierung als hilfestellung #MirwarLangweillig
@@ -54,10 +54,12 @@ Ausgabe(a);
 }*/	
 
 
-static boolean  DatumsUeberpruefen (String date,boolean a){   // Methode zur Datumsüberprüfung
-	 String split[]=date.split("-");
-	 SimpleDateFormat df =new SimpleDateFormat("dd.MM.yy");
-	 df.setLenient(false);	
+static boolean  datumsUeberpruefen (String date){   // Methode zur Datumsüberprüfung
+	
+	String split[]=date.split("-");
+	boolean a=true;
+	SimpleDateFormat df =new SimpleDateFormat("dd.MM.yy");
+    df.setLenient(false);	
 	try{
 	Date d3=df.parse(split[0]);
 	Date d4=df.parse(split[1]);
@@ -69,7 +71,7 @@ static boolean  DatumsUeberpruefen (String date,boolean a){   // Methode zur Dat
 
 	 return a;
 	}
-static String EingabeDatum(){  // Methode zu Datums Eingabe und zur Überprüfung der richtigen Notation
+static String eingabeDatum(){  // Methode zu Datums Eingabe und zur Überprüfung der richtigen Notation
 	Scanner sc = new Scanner (System.in);
 	boolean a=true;
 	String dt2;
@@ -79,7 +81,7 @@ static String EingabeDatum(){  // Methode zu Datums Eingabe und zur Überprüfun
 	 dt2=sc.next();	
 	if(dt2.matches("(\\d{2}[.]{1}\\d{2}[.]{1}\\d{2}[-]{1}\\d{2}[.]{1}\\d{2}[.]{1}\\d{2})")){
 		
-	 a=DatumsUeberpruefen(dt2,a);
+	 a=datumsUeberpruefen(dt2);
 	} else{
 		System.out.println("Eingabe entsprich nicht der Vorgabe");
 	}
@@ -90,7 +92,7 @@ static String EingabeDatum(){  // Methode zu Datums Eingabe und zur Überprüfun
 }
 
 
-public static boolean Kontrolle(String wohn[],String dt2){ // Methode zur Kontrolle ob Wohnungen zu dem angegeben Zeitung frei sind.
+public static boolean kontrolle(String wohn[],String dt2){ // Methode zur Kontrolle ob Wohnungen zu dem angegeben Zeitung frei sind.
 	
 
 String datum[]= wohn[0].split("-");
@@ -120,7 +122,7 @@ return a;
 }
 
 
-public static void Ausgabe(boolean b){
+public static void ausgabe(boolean b){
  if(b==false){
 	System.out.println("Wohnungen sind Frei");
 	}else

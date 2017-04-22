@@ -4,7 +4,7 @@ public class Start {
 //test
 	
 public static void main (String []Args){
-	UeberpruefungWohnung.UeberpruefungWonhungen();
+	UeberpruefungWohnung.ueberpruefungWonhungen();
 
 }
 }
