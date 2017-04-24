@@ -92,7 +92,7 @@ static String eingabeDatum(){  // Methode zu Datums Eingabe und zur Überprüfun
 }
 
 
-public static boolean kontrolle(String wohn[],String dt2){ // Methode zur Kontrolle ob Wohnungen zu dem angegeben Zeitung frei sind.
+public static boolean kontrolle(String wohn[],String dt2){ // Methode zur Kontrolle ob Wohnungen zu dem angegeben Zeitraum frei sind.
 	
 
 String datum[]= wohn[0].split("-");
