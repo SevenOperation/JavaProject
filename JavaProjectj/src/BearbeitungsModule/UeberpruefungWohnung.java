@@ -54,7 +54,7 @@ ausgabe(a);
 }*/	
 
 
-static boolean  datumsUeberpruefen (String date){   // Methode zur Datumsüberprüfung
+public static boolean  datumsUeberpruefen (String date){   // Methode zur Datumsüberprüfung
 	
 	String split[]=date.split("-");
 	boolean a=true;
@@ -64,9 +64,11 @@ static boolean  datumsUeberpruefen (String date){   // Methode zur Datumsüberpr
 	Date d3=df.parse(split[0]);
 	Date d4=df.parse(split[1]);
 	System.out.println("Datumseingabe Korrekt");
-	a=false;
+	//a=false; Why if it throws an exception than it is wrong but when not it is correct
 	}catch(ParseException ex){
 		System.out.println("Falsche  Datums Eingabe, bitte Wiederholen sie ihre Eingabe");
+		a = false;
+		return a;
 	}	
 
 	 return a;

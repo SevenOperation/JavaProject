@@ -5,8 +5,10 @@ import BearbeitungsModule.UeberpruefungWohnung;
 
 public class Buchen {
 	public static void suchenZeitraum(String zeitraum) {
-		String[] zeitraeume = zeitraum.split("-");
-		UeberpruefungWohnung.Kontrolle(zeitraeume);// warte auf methode zur Ueberpruefung welche frei sind
+		if(UeberpruefungWohnung.datumsUeberpruefen(zeitraum)){
+			//UeberpruefungWohnung.kontrolle(wohn, zeitraum);
+			// warte auf methode zur Ueberpruefung welche frei sind
+		}
 	}
 
 	// Methode zum festlegen einer Buchung schreibt die daten in das wohnungen array
