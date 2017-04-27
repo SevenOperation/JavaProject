@@ -86,10 +86,11 @@ static String eingabeDatum(){  // Methode zu Datums Eingabe und zur Überprüfun
 	 a=datumsUeberpruefen(dt2);
 	} else{
 		System.out.println("Eingabe entsprich nicht der Vorgabe");
+		a=false;
 	}
 	 
 	
-	}while(a==true);
+	}while(a==false);
 	return dt2;
 }
 
