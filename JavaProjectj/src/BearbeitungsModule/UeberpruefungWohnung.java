@@ -22,7 +22,7 @@ public class UeberpruefungWohnung {
 static void ueberpruefungWonhungen(){
 String wohn[] =new String [2];
 wohn[0]= "12.03.2017-14.03.2017";
-wohn[1]= "12.05.2017-15.05.2017";
+wohn[1]= "12.05.2017-17.05.2017";
 boolean a=false;
 String aber;
 aber=eingabeDatum();
@@ -58,7 +58,7 @@ public static boolean  datumsUeberpruefen (String date){   // Methode zur Datums
 	
 	String split[]=date.split("-");
 	boolean a=true;
-	SimpleDateFormat df =new SimpleDateFormat("dd.MM.yy");
+	SimpleDateFormat df =new SimpleDateFormat("dd.MM.yyyy");
     df.setLenient(false);	
 	try{
 	Date d3=df.parse(split[0]);
@@ -78,10 +78,10 @@ static String eingabeDatum(){  // Methode zu Datums Eingabe und zur Überprüfun
 	boolean a=true;
 	String dt2;
 	do{
-	System.out.println("Datum eingeben in der Form 12.03.17-13.03.17");
+	System.out.println("Datum eingeben in der Form 12.03.2017-13.03.2017");
 	
 	 dt2=sc.next();	
-	if(dt2.matches("(\\d{2}[.]{1}\\d{2}[.]{1}\\d{2}[-]{1}\\d{2}[.]{1}\\d{2}[.]{1}\\d{2})")){
+	if(dt2.matches("(\\d{2}[.]{1}\\d{2}[.]{1}\\d{4}[-]{1}\\d{2}[.]{1}\\d{2}[.]{1}\\d{4})")){
 		
 	 a=datumsUeberpruefen(dt2);
 	} else{
