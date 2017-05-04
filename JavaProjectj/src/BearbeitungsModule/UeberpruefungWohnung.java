@@ -1,4 +1,4 @@
-package BearbeitungsModule;
+ package BearbeitungsModule;
 
 
 
@@ -20,14 +20,13 @@ public class UeberpruefungWohnung {
 
 
 static void ueberpruefungWonhungen(){
-String wohn[] =new String [2];
-wohn[0]= "12.03.2017-14.03.2017";
-wohn[1]= "12.05.2017-17.05.2017";
+
+String wohnung [][]={{"12.03.17-13 .04.17","10.02.17-13.02.17"},{"14.04.17-23.05.17","12.06.17-13.06.17"}};	
 boolean a=false;
 String aber;
 aber=eingabeDatum();
 
-a=kontrolle(wohn,aber);
+a=kontrolle(wohnung,aber);
 ausgabe(a);
 
 //datumsValidierung();
@@ -95,7 +94,7 @@ static String eingabeDatum(){  // Methode zu Datums Eingabe und zur Überprüfun
 }
 
 
-public static boolean kontrolle(String wohn[],String dt2){ // Methode zur Kontrolle ob Wohnungen zu dem angegeben Zeitraum frei sind.
+public static boolean kontrolle(String wohn[][],String dt2){ // Methode zur Kontrolle ob Wohnungen zu dem angegeben Zeitraum frei sind.
 	
 
 String datum[]= wohn[0].split("-");
