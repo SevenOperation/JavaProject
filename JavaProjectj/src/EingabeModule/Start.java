@@ -7,7 +7,7 @@ public class Start {
 	//wohungsarray[4]Anzahl der Wohnungen[x] Zeitraum (23.4.2017 - 28.4.2017) [0,1,2,3] Benutzerdaten (Vorname , Nachname, Preis , Zeitraum)
 	//katalogArray[4] Anzahl der Wohnungen[4] (Preis,Beschreibung,Größe,Imagepfad)
  static String[][] benutzer = new String[1][3];
- static String[][][] wohungsarray = new String[1][1][4];
+ static String[][][] wohungsarray = new String[2][2][4];
  static String[][] katalogArray = new String[1][4];
  public static void main(String args[]){
  benutzer[0][0] = "Dieter";
@@ -20,6 +20,21 @@ public class Start {
  wohungsarray[0][0][1] = "M�ller";
  wohungsarray[0][0][2] = "90.6";
  wohungsarray[0][0][3] = "24.4.2017-30.5.2017";
+ 
+ wohungsarray[0][1][0] = "Dieter";
+ wohungsarray[0][1][1] = "M�ller";
+ wohungsarray[0][1][2] = "90.6";
+ wohungsarray[0][1][3] = "24.4.2017-30.5.2017";
+ 
+ wohungsarray[1][0][0] = "80";
+ wohungsarray[1][0][1] = "Hintch";
+ wohungsarray[1][0][2] = "90.6";
+ wohungsarray[1][0][3] = "01.01.2016-31.12.2017";
+ 
+ wohungsarray[1][1][0] = "80";
+ wohungsarray[1][1][1] = "Hintch";
+ wohungsarray[1][1][2] = "90.6";
+ wohungsarray[1][1][3] = "01.01.2016-31.12.2017";
  ArraySpeichern.save(wohungsarray);
  benutzer = ArrayEinlesen.readBenutzer();
  System.out.println(wohungsarray[0][0][3]);
