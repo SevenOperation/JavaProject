@@ -106,8 +106,7 @@ try{
 Date d1=df.parse(datum[0]);
 Date d2=df.parse(datum[1]);
 Date d3=df.parse(eingabeDatum[0]);
-Date d4=df.parse(eingabeDatum
-		                                                                              1]);
+Date d4=df.parse(eingabeDatum[1]);
 Date d5=df.parse(datum2[0]);
 Date d6=df.parse(datum2[1]);
 
